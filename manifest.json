@@ -1,0 +1,35 @@
+{
+    "manifest_version": 3,
+    "name": "YouTube 스크립트 요약기",
+    "version": "1.0",
+    "description": "YouTube 동영상 스크립트를 확장하고 요약하여 보여줍니다.",
+    "permissions": [
+      "activeTab",
+      "storage"
+    ],
+    "host_permissions": [
+      "https://*.youtube.com/*",
+      "https://generativelanguage.googleapis.com/*"
+    ],
+    "action": {
+      "default_icon": "icon.png",
+      "default_title": "스크립트 요약"
+    },
+    "background": {
+      "scripts": ["background.js"]      
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://*.youtube.com/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "browser_specific_settings": {
+      "gecko": {
+        "id": "myoprix@gmail.com"
+      }
+    },
+    "data_collection_permissions": {
+      "description": "이 확장 프로그램은 Gemini API를 호출하기 위해 사용자가 입력한 API 키를 로컬에 저장합니다. 이 키는 사용자 기기에만 저장되며, 개발자나 제3자에게 전송되지 않습니다. 이 키를 삭제하려면 확장 프로그램을 제거하면 됩니다."
+    }
+  }
