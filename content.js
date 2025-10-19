@@ -228,9 +228,6 @@ function showNotification(message, type) {
   }, 3000);
 }
 
-// content.js
-// ... (기존 코드)
-
 /**
  * Creates a side panel to display the summarized text.
  * @param {string} summaryText - The text to be displayed in the summary panel.
@@ -306,4 +303,5 @@ function showSidePanel(summaryText) {
   closeButton.addEventListener('click', () => {
     panel.remove();
   });
+
 }
